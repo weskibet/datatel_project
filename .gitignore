@@ -1,0 +1,29 @@
+# Local environment and secrets
+.env
+credentials/
+*.json
+
+# Large/generated source data
+data/*.csv
+data/*.parquet
+data/*.xlsx
+
+# Airflow runtime output
+logs/
+plugins/__pycache__/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local/editor/system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+work/
+*.log
