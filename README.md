@@ -141,7 +141,7 @@ This lets the pipeline remain transparent without allowing known source-system i
 The final table is:
 
 ```text
-lucid-splicer-440817-u6.datatel_dw.dw_user_analytics
+<your-gcp-project>.datatel_dw.dw_user_analytics
 ```
 
 It contains one row per customer and includes:
@@ -223,11 +223,11 @@ This starts:
 http://localhost:8080
 ```
 
-Default local login:
+Default local development login:
 
 ```text
-username: admin
-password: admin
+username: *****(as_you_wish)
+password: *****(as_you_wish)
 ```
 
 ### 4. Load CSVs Into Docker Postgres
@@ -256,7 +256,7 @@ Port: 5432
 
 ```text
 datatel_postgres_conn_id = datatel_postgres
-datatel_bq_project = lucid-splicer-440817-u6
+datatel_bq_project = <your-gcp-project>
 datatel_bq_dataset = datatel_dw
 datatel_bq_location = US
 ```
@@ -305,17 +305,9 @@ BigQuery output:
 
 | Table | Rows | Columns |
 | --- | ---: | ---: |
-| `datatel_dw.dw_user_analytics` | 100,000 | 16 |
+| `<gcp-project>.datatel_dw.dw_user_analytics` | 100,000 | 16 |
 
 ## GitHub Notes
-
-The repository intentionally ignores:
-
-- `.env`
-- `credentials/`
-- `data/*.csv`
-- `logs/`
-- Python cache files
 
 Do not commit service-account JSON files, raw source CSVs, Airflow logs, or local environment files.
 
